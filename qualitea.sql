@@ -3,13 +3,6 @@ CREATE DATABASE IF NOT EXISTS qualitea;
 
 USE qualitea;
 
-CREATE TABLE address (
-   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-   rue VARCHAR(50) NOT NULL ,
-   cp INT(5) NOT NULL,
-   ville VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE roles (
    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
    name VARCHAR(50) NOT NULL
@@ -24,11 +17,14 @@ CREATE TABLE users (
    role_id INT(6) UNSIGNED NOT NULL,
    sexe VARCHAR(50) NOT NULL,
    tel INT(10),
-   FOREIGN KEY (address_id) REFERENCES address(id),
+   rue VARCHAR(50) NOT NULL ,
+   cp INT(5) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
    FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 CREATE TABLE articles (
    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(50) NOT NULL,
    prix INT(6) NOT NULL,
    stock INT(6),
    img VARCHAR(50) NOT NULL
