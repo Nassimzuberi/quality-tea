@@ -14,7 +14,6 @@ CREATE TABLE users (
    pseudo VARCHAR(50) NOT NULL UNIQUE ,
    password VARCHAR(100) NOT NULL,
    email VARCHAR(50) NOT NULL UNIQUE ,
-   address_id INT(6) UNSIGNED NOT NULL,
    role_id INT(6) UNSIGNED NOT NULL,
    sexe VARCHAR(50) NOT NULL,
    tel INT(10),

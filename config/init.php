@@ -34,39 +34,23 @@ function signupFormValidation(Array $user){
     return $error;
 }
 
-function createAddress(Array $address){
-    $pdo = getDb();
-    $req = $pdo->prepare("INSERT INTO address(rue,cp,ville) values (:rue,:cp,:ville)");
-    $req->bindParam(':rue', $address['rue'], PDO::PARAM_STR);
-    $req->bindParam(':cp', $address['cp'], PDO::PARAM_INT);
-    $req->bindParam(':ville', $address['ville'], PDO::PARAM_STR);
-    if($req->execute()){
-        return true;
-    }else {
-        return false;
-    }
-}
 function createUser(Array $user){
 
     if(signupFormValidation($user)){
         return header("location: inscription.php?".signupformValidation($user));
     }
-    $address = [
-        "rue" => $user['rue'],
-        "cp" => $user['cp'],
-        "ville" => $user['ville'],
-    ];
 
-    $address = createAddress($address);
     $password = password_hash($user['password'],PASSWORD_DEFAULT);
     $role_id = 1;
 
     $pdo = getDb();
-    $req = $pdo->prepare("INSERT INTO users(pseudo,email,password,address_id,role_id,sexe) values (:pseudo,:email,:password,:address_id,:role_id,:sexe)");
+    $req = $pdo->prepare("INSERT INTO users(pseudo,email,password,rue,cp,ville,role_id,sexe) values (:pseudo,:email,:password,:rue,:cp,:ville,:role_id,:sexe)");
     $req->bindParam(':pseudo', $user['pseudo'], PDO::PARAM_STR);
     $req->bindParam(':email', $user['email'], PDO::PARAM_STR);
     $req->bindParam(':password', $password, PDO::PARAM_STR);
-    $req->bindParam(':address_id', $user['address_id'], PDO::PARAM_INT);
+    $req->bindParam(':rue', $user['rue'], PDO::PARAM_STR);
+    $req->bindParam(':cp', $user['cp'], PDO::PARAM_INT);
+    $req->bindParam(':ville', $user['ville'], PDO::PARAM_STR);
     $req->bindParam(':role_id', $role_id, PDO::PARAM_INT);
     $req->bindParam(':sexe', $user['sexe'], PDO::PARAM_STR);
     if($req->execute()){

@@ -21,9 +21,9 @@
         <?php if(isset($_GET['confirm_password'])) : ?>
         <div class="alert">Les mots de passes ne sont pas identiques </div>
         <?php endif ?>
-        <input type="text" name="street" placeholder="Rue">
+        <input type="text" name="rue" placeholder="Rue">
         <input type="number" name="cp" placeholder="Code postale">
-        <input type="text" name="city" placeholder="Ville"><br>
+        <input type="text" name="ville" placeholder="Ville"><br>
         <input type="radio" name="sexe" value="Femme"><label for="">Femme</label>
         <input type="radio" name="sexe" value="Homme"><label for="">Homme</label><br>
         <button type="submit">ENVOYER</button>
