@@ -6,16 +6,16 @@
     <form action="" method="post">
         <input type="email" name="email" placeholder="email"><br>
         <input type="password" name="password" placeholder="Password"><br>
-        <button type="submit">ENVOYER</button>
+        <button type="submit" name="send" value="login"">ENVOYER</button>
     </form>
 <hr>
 <?php include 'config/template/footer.php'; ?>
 
 
-<?php if(isset($_POST)){
+<?php if(isset($_POST['send']) && $_POST['send'] == "login"){
     login($_POST);
 }
-if(isset($_SESSION)){
+if(isset($_SESSION['isLogged'])){
     var_dump($_SESSION);
 }
 

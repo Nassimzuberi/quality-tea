@@ -11,13 +11,13 @@ CREATE TABLE roles (
 
 CREATE TABLE users (
    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-   pseudo VARCHAR(50) NOT NULL UNIQUE ,
-   password VARCHAR(100) NOT NULL,
-   email VARCHAR(50) NOT NULL UNIQUE ,
+   pseudo VARCHAR(20) NOT NULL UNIQUE ,
+   password VARCHAR(150) NOT NULL,
+   email VARCHAR(150) NOT NULL UNIQUE ,
    role_id INT(6) UNSIGNED NOT NULL,
-   sexe VARCHAR(50) NOT NULL,
+   sexe VARCHAR(10) NOT NULL,
    tel INT(10),
-   rue VARCHAR(50) NOT NULL ,
+   rue VARCHAR(150) NOT NULL ,
    cp INT(5) NOT NULL,
    ville VARCHAR(50) NOT NULL,
    FOREIGN KEY (role_id) REFERENCES roles(id)
@@ -30,3 +30,5 @@ CREATE TABLE articles (
    img VARCHAR(50) NOT NULL
 );
 
+INSERT INTO roles(name) VALUES ("user");
+INSERT INTO roles(name) VALUES ("admin");

@@ -9,8 +9,13 @@ define('PASSWORD',$env['DB_PASSWORD']);
 
 
 function getDb(){
-    $pdo = new PDO('mysql:host='. HOST .';dbname='. NAME ,USER , PASSWORD);
-    return $pdo;
+    try{
+        $pdo = new PDO('mysql:host='. HOST .';dbname='. NAME ,USER , PASSWORD);
+        return $pdo;
+    }
+    catch(PDOException $e){
+        die($e->getFile(). $e->getLine().$e->getMessage());
+    }
 }
 function signupFormValidation(Array $user){
     $error = "";
@@ -40,23 +45,26 @@ function createUser(Array $user){
         return header("location: inscription.php?".signupformValidation($user));
     }
 
-    $password = password_hash($user['password'],PASSWORD_DEFAULT);
-    $role_id = 1;
+    extract($user);
+    $passwordHash = password_hash($user['password'],PASSWORD_DEFAULT);
 
     $pdo = getDb();
     $req = $pdo->prepare("INSERT INTO users(pseudo,email,password,rue,cp,ville,role_id,sexe) values (:pseudo,:email,:password,:rue,:cp,:ville,:role_id,:sexe)");
-    $req->bindParam(':pseudo', $user['pseudo'], PDO::PARAM_STR);
-    $req->bindParam(':email', $user['email'], PDO::PARAM_STR);
-    $req->bindParam(':password', $password, PDO::PARAM_STR);
-    $req->bindParam(':rue', $user['rue'], PDO::PARAM_STR);
-    $req->bindParam(':cp', $user['cp'], PDO::PARAM_INT);
-    $req->bindParam(':ville', $user['ville'], PDO::PARAM_STR);
-    $req->bindParam(':role_id', $role_id, PDO::PARAM_INT);
-    $req->bindParam(':sexe', $user['sexe'], PDO::PARAM_STR);
-    if($req->execute()){
-        login($user);
+
+    if($req->execute([
+        'pseudo' => $pseudo,
+        'email' => $email,
+        'password' => $passwordHash,
+        'rue' => $rue,
+        'cp' => $cp,
+        'ville' => $ville,
+        'role_id' => 1,
+        'sexe' => $sexe
+
+    ])){
+        return header('Location: inscription.php?register=true');
     }else {
-        var_dump("echec");
+        var_dump($req->execute());
     }
 }
 

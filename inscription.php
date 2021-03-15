@@ -3,7 +3,10 @@
     <?php include 'config/template/nav.php'; ?>
 </header>
 <h2 class="text-center mt-5 mb-5">Page inscription</h2>
+<?php if(isset($_GET['register']) && $_GET['register'] == true) : ?>
+<div class="alert alert-success">Inscription validée</div>
 
+<?php endif ?>
     <form action="" method="post">
         <input type="text" name="pseudo" placeholder="Pseudo"><br>
         <?php if(isset($_GET['pseudo'])) : ?>
@@ -26,10 +29,10 @@
         <input type="text" name="ville" placeholder="Ville"><br>
         <input type="radio" name="sexe" value="Femme"><label for="">Femme</label>
         <input type="radio" name="sexe" value="Homme"><label for="">Homme</label><br>
-        <button type="submit">ENVOYER</button>
+        <button type="submit" name="send" value="signup">ENVOYER</button>
     </form>
 <?php include 'config/template/footer.php'; ?>
 
-<?php if(isset($_POST)){
+<?php if(isset($_POST["send"]) && $_POST["send"] == "signup"){
     createUser($_POST);
 }
