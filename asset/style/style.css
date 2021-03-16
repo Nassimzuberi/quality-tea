@@ -1,0 +1,44 @@
+body{
+    margin:0;
+    --primary : #FFDB5C;
+    font-family: "Poppins",sans-serif;
+}
+
+#overrides .navbar{
+    filter: drop-shadow(0 -2px 10px var(--primary));
+}
+#overrides .navbar-brand{
+    font-family: "Bodoni Moda",sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 3.5em;
+}
+
+#overrides .nav-link{
+    color:#171717;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+#overrides .nav-link:hover{
+    color: var(--primary)
+}
+.form-search{
+    border: 2px var(--primary) solid;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    border-radius: 31px;
+    overflow: hidden;
+}
+
+.form-search-input{
+    background: inherit;
+    border: none;
+    width: 25px;
+    transition: 0.5s all;
+}
+
+.form-search-submit{
+    background: inherit;
+    border: none;
+}

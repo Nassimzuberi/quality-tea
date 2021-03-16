@@ -13,11 +13,12 @@ if(isset($_SESSION['panier'])){
 <header>
     <?php include 'config/template/nav.php'; ?>
 </header>
-<h2 class="text-center mt-5 mb-5">Page panier</h2>
+<div class="container">
+    <h2 class="text-center mt-5 mb-5">Mon panier</h2>
 
-<?php foreach ($articles as $article) : ?>
-<div class="title"><?= $article['name'] ?></div>
+    <?php foreach ($articles as $article) : ?>
+        <div class="title"><?= $article['name'] ?></div>
 
-<?php endforeach; ?>
-<hr>
+    <?php endforeach; ?>
+</div>
 <?php include 'config/template/footer.php'; ?>

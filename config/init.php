@@ -7,7 +7,6 @@ define('NAME',$env['DB_NAME']);
 define('USER',$env['DB_USER']);
 define('PASSWORD',$env['DB_PASSWORD']);
 
-
 function getDb(){
     try{
         $pdo = new PDO('mysql:host='. HOST .';dbname='. NAME ,USER , PASSWORD);
@@ -17,6 +16,8 @@ function getDb(){
         die($e->getFile(). $e->getLine().$e->getMessage());
     }
 }
+
+
 function signupFormValidation(Array $user){
     $error = "";
     if(strlen($user["pseudo"]) < 3 || strlen($user["pseudo"]) > 10){

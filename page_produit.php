@@ -2,8 +2,8 @@
 <header>
     <?php include 'config/template/nav.php'; ?>
 </header>
-<h2 class="text-center mt-5 mb-5">Page Accueil</h2>
-<hr>
+<h2 class="text-center mt-5 mb-5">Nos produits</h2>
+
+
 <?php include 'config/template/footer.php'; ?>
 
-<?php $title = "Page d'accueil |"; ?>
