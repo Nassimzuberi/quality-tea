@@ -72,4 +72,25 @@ body{
     font-size: 1.5em;
 }
 
+.home{
+    background-image: url("../images/aniketh-kanukurthi-Qaor6nxikUM-unsplash.jpg");
+    height: 100vh;
+    background-size: cover;
+}
 
+.titre{
+    font-family: "Bodoni Moda";
+    text-align: center;
+    
+
+    
+}
+
+#overrides .big-title{
+    color: var(--primary);
+    font-size: 169px;
+}
+
+.titre h2{
+    
+}
