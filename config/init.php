@@ -7,6 +7,14 @@ define('NAME',$env['DB_NAME']);
 define('USER',$env['DB_USER']);
 define('PASSWORD',$env['DB_PASSWORD']);
 
+$title = "Page d'accueil";
+if(isset($_POST["send"]) && $_POST["send"] == "signup"){
+    createUser($_POST);
+}
+if(isset($_POST['send']) && $_POST['send'] == "login"){
+    login($_POST);
+}
+
 function getDb(){
     try{
         $pdo = new PDO('mysql:host='. HOST .';dbname='. NAME ,USER , PASSWORD);

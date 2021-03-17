@@ -1,7 +1,12 @@
 body{
     margin:0;
     --primary : #FFDB5C;
+    --secondary: rgba(255,229,136,0.4);
     font-family: "Poppins",sans-serif;
+}
+
+.text-grey{
+    color: #5F5F5F;
 }
 
 #overrides .navbar{
@@ -42,3 +47,29 @@ body{
     background: inherit;
     border: none;
 }
+
+#overrides .login-nav .nav-link{
+    color:grey;
+}
+
+#overrides .bg-secondary{
+    background-color: var(--secondary) !important;
+}
+
+#overrides .card{
+    width: 80%;
+}
+
+.article-desc{
+    color: #5F5F5F;
+}
+.article-capacity{
+    color: #5F5F5F;
+    font-weight: 600;
+}
+#overrides .price{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+
