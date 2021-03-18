@@ -4,6 +4,10 @@
 </header>
 <body>
 <div class="home">
+    <div class="banniere_image">
+    <a href=""></a>
+    <img src="twitter (1).svg" alt="twitter_icon">
+    </div>
     <div class="titre">
         <h1 class="big-title">Qualitea</h1>
         <h2>Thé & infusions</h2>
@@ -12,10 +16,12 @@
             <p>Qualitea vous invite à travers une sélection exigeante de thés d'origine exceptionnels 
             et de créations parfumées irrésistibles.</p>
         </div>
+
 </div>
 </div>
     <div class="small-container">
         <h3 class="title">Notre sélection du moment</h3>
+        <div id="trait_dessus"></div>
         <div class="row">
             <div class="col_3">
                 <img src="asset/images/the-noir-vietnam-bio.png">
