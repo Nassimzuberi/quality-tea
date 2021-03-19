@@ -51,7 +51,7 @@ function signupFormValidation(Array $user){
 function createUser(Array $user){
 
     if(signupFormValidation($user)){
-        return header("location: inscription.php?".signupformValidation($user));
+        return header("location: user.php?p=signup".signupformValidation($user));
     }
 
     extract($user);
@@ -71,7 +71,7 @@ function createUser(Array $user){
         'sexe' => $sexe
 
     ])){
-        return header('Location: inscription.php?register=true');
+        return header('Location: user.php?p=signup&register=true');
     }else {
         var_dump($req->execute());
     }

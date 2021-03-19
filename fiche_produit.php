@@ -8,6 +8,8 @@
 
 if(isset($_GET)){
     $article = getArticleById($_GET['id']);
+} else{
+
 }
 ?>
 
@@ -19,13 +21,12 @@ if(isset($_GET)){
 
 
 <?php else : ?>
-<div>L'article n'existe pas</div>
     <div class="row my-5">
         <div class="col-xl text-center">
             <img src="asset/the-noir-vietnam-bio%201.png" alt="thé-noir">
         </div>
         <div class="col-xl mx-auto">
-            <div class="card p-3 bg-secondary h-100">
+            <div class="card px-5 bg-secondary h-100 justify-content-center">
                 <div class="d-flex justify-content-between">
                     <h3>White Bellini bio</h3>
                     <p class="price">18.80€</p>
@@ -34,7 +35,7 @@ if(isset($_GET)){
                 <p class="article-capacity">Recharge 100g</p>
                 <div>
                     <?php for($i=0; $i<4;$i++)  : ?>
-                    <img src="asset/star-s.svg" alt="star-s">
+                        <img src="asset/star-s.svg" alt="star-s">
                     <?php endfor;?>
                     <?php for($i=0;$i<1;$i++) : ?>
                         <img src="asset/star-r.svg" alt="star-s">
@@ -48,14 +49,13 @@ if(isset($_GET)){
                         <input type="number" name="qty" value="1" max="20" class="form-control">
 
                     </div>
-                    <button type="submit" class="btn btn-block btn-secondary">Ajoutez</button>
+                    <button type="submit" class="btn btn-block btn-secondary" name="send" value="add-cart">Ajoutez</button>
                 </form>
                 <a href="" class="text-center text-grey my-3">Information sur la livraison</a>
                 <div class="text-success text-center">Disponible</div>
             </div>
         </div>
     </div>
-.
 <?php endif;?>
 <hr>
 <?php include 'config/template/footer.php'; ?>

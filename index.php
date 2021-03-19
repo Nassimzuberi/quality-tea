@@ -1,6 +1,6 @@
 <?php include 'config/template/head.php'; ?>
 <header>
-    <?php include 'config/template/nav.php'; ?>
+    <?php include 'config/template/home-nav.php'; ?>
 </header>
 <body>
 <div class="home">
