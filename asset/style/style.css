@@ -132,3 +132,98 @@ top: 1010px;
 
 border: 4px solid #FFDB5C;
 }
+
+.box{
+    box-shadow: 0px 4px 21px rgba(0,0,0,0.22);
+    border-radius: 15px;
+}
+
+.box img{
+    width: 211px;
+    height: 211px;
+}
+
+#overrides .title{
+    margin: 80px 0px;
+}
+
+.first-img{
+    background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F37F7F 100%), url(../images/joanna-kosinska-B43a-FPxYqU-unsplash.jpg);
+    border-radius: 44px;
+    height:800px;
+    width:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+
+.second-img{
+    background-image:linear-gradient(360deg, #44938E 0%, rgba(255, 255, 255, 0) 100%), url(../images/alice-pasqual-2yZxFxn1938-unsplash.jpg);
+    border-radius: 44px;
+    height:800px;
+    width:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-top: 80px;
+}
+
+.offers {
+    margin-top: 80px;
+    width: 1140px;
+}
+
+.secons-title{
+    text-align: center;
+}
+
+.text-second-img{
+    position: absolute;
+}
+
+.newsletter{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.input-email{
+    background: #F5F5F5;
+    border-radius: 41.5px; 
+    width: 835px
+}
+
+input{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+input[type="text"]{
+    background: #F5F5F5;
+    width: 680px;
+    height: 70px;
+    border: none;
+    outline: none;
+    padding: 0, 25px;
+    border-radius: 50px 0 0 50px ;
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius: 0 50px 50px 0;
+    width: 150px;
+    height: 70px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #FFDB5C;
+    color: #FFFF;
+}
+
+.social-menu ul {
+    position: absolute;
+     top: 50%;
+     left: 50%;
+      padding: 0;
+      margin: 0;
+}
