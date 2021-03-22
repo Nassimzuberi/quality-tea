@@ -75,7 +75,7 @@
 <section class="newsletter">
     <h3 class="second-title">Inscrivez-vous à notre newsletter pour recevoir nos offres et actualités</h3>
             <div 
-                id="second-trait_dessus">
+                id="second-trait-dessus">
             </div>
             <div class="input-email">
                 <form>
@@ -91,7 +91,7 @@
 </section>
 <section class="social-menu">
         <ul>
-            <li><a href="#"><img src="facebook.svg" alt="icon-facebook"> <i class="fa fa-facebook"></i></a></li>
+            <i class="fab fa-facebook"></i>
             <li><a href="#"><img src="twitter (1).svg" alt=""><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><img src="instagram.svg" alt=""><i class="fa fa-instagram"></i></a></li>
             <li><a href="#"><img src="pinterest-social-logo.svg" alt=""><i class="fa fa-pinterest"></i></a></li>
