@@ -4,7 +4,7 @@
 
 <?php endif ?>
 <form action="" method="post" class="form-signup px-3 px-md-5 py-3 bg-light">
-    <h4 class="mt-3">Créer un compte</h4>
+    <h5 class="mt-3">Créer un compte</h5>
     <hr>
     <div class="form-group">
         <label for="" class="form-label">Genre*</label><br>
@@ -32,10 +32,10 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="">Pseudo*</label>
-            <input type="text" name="pseudo" class="form-control" required>
+            <input type="text" name="pseudo" class="form-control <?= isset($_GET['pseudo']) ? "is-invalid" : ''?>" required>
 
             <?php if(isset($_GET['pseudo'])) : ?>
-                <div class="alert alert-danger">Le pseudo doit comprendre entre 3 et 10 caractères</div>
+                <div class="invalid-feedback">Le pseudo doit comprendre entre 3 et 10 caractères</div>
             <?php endif ?>
         </div>
         <div class="form-group col-md-6">
@@ -81,7 +81,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">Confirmez le mot de passe*</label>
-            <input type="password" name="confirm_password " class="form-control <?= isset($_GET['confirm_password']) ?? "is-invalid" ?>" required>
+            <input type="password" name="confirm_password " class="form-control <?= isset($_GET['confirm_password']) ? "is-invalid" : ''?>" required>
             <?php if(isset($_GET['confirm_password'])) : ?>
                 <div class="invalid-feedback">Les mots de passes ne sont pas identiques </div>
             <?php endif ?>
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="text-center">
-        <button type="submit" name="send" value="signup" class="btn btn-primary text-uppercase">Créer un compte</button>
+        <button type="submit" name="send" value="signup" class="btn btn-secondary">Créer un compte</button>
 
     </div>
 </form>
