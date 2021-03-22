@@ -13,6 +13,13 @@ body{
 .text-grey{
     color: #5F5F5F;
 }
+a.text-grey:hover{
+    color: #5F5F5F;
+
+}
+#overrides .bg-secondary{
+    background-color: var(--secondary) !important;
+}
 
 #overrides .btn-secondary{
     background: radial-gradient(99.17% 2802.45% at 0% 0%, #FFDB5C 8.85%, rgba(255, 255, 255, 0.43) 52.08%, #FFDB5C 100%, rgba(255, 255, 255, 0) 100%),
@@ -86,6 +93,45 @@ body{
 }
 
 /******************************* PAGE D'ACCUEIL ***************************/
+.home{
+    background-image: url("../images/aniketh-kanukurthi-Qaor6nxikUM-unsplash.jpg");
+    height: 100vh;
+    background-size: cover;
+}
+
+.titre{
+    font-family: "Bodoni Moda";
+    text-align: center;
+    padding-top: 100px;
+}
+
+#overrides .big-title{
+    color: var(--primary);
+    font-size: 100px;
+}
+
+#overrides .titre h2{
+    color: white;
+    font-size: 60px;
+}
+
+#overrides .sous-titre p{
+    position: absolute;
+    width: 1293px;
+    height: 72px;
+    left: 55px;
+    top: 550px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 37px;
+    text-align: center;
+    color: white;
+
+}
+
 
 #banniere_image
 {
@@ -158,7 +204,7 @@ body{
     font-size: 1.25em;
 }
 #overrides .login-nav .active,#overrides .login-nav .nav-link:hover{
-    color:#171717;
+    color:#171717 !important;
     box-sizing: border-box !important;
     border-bottom: 4px var(--primary) solid;
 }
@@ -178,7 +224,7 @@ body{
     color:grey;
 }
 .form-login{
-    width:60%;
+    width:550px;;
 }
 
 #overrides .card{
@@ -196,6 +242,7 @@ body{
     font-weight: 600;
     font-size: 1.5em;
 }
+
 
 /*********************** PAGE PANIER ******************************/
 
@@ -225,10 +272,10 @@ footer{
 footer .qualities img{
     height: 40px;
 }
-footer .brand-name{
+.footer-brand{
     font-family: "Bodoni Moda", serif;
     font-weight: 700;
-
+    font-size: 1.25em;
 }
 
 footer p{
@@ -237,5 +284,22 @@ footer p{
 
 .footer-link a{
     color: #383838;
+    display: block;
+}
+
+footer h6{
+    font-family: "Bodoni Moda", sans-serif ;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.social-link img{
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
 }
 
