@@ -123,7 +123,7 @@ body{
     width: 1293px;
     height: 72px;
     left: 55px;
-    top: 400px;
+    top: 550px;
     
     font-family: Poppins;
     font-style: normal;
@@ -161,20 +161,17 @@ footer p{
     border: none;
 }
 
-#banniere_image
+#icon-home
 {
    height: 100px;
    box-shadow: 0px 4px 4px #1c1a19;
 }
 
 #trait_dessus{
-position: absolute;
-width: 170px;
-height: 0px;
-left: 635px;
-top: 1010px;
-
-border: 4px solid #FFDB5C;
+    width: 170px;
+    height: 0px;
+    border: 4px solid #FFDB5C;
+    margin-bottom: 70px;
 }
 
 .box{
@@ -218,6 +215,7 @@ border: 4px solid #FFDB5C;
 
 .second-title{
     text-align: center;
+    margin-top: 70px;
 }
 
 #overrides .article-cart-img{
@@ -244,9 +242,7 @@ border: 4px solid #FFDB5C;
 .input-email{
     background: #F5F5F5;
     border-radius: 41.5px; 
-    width: 835px;
-
-    
+    width: 835px;    
 }
 
 .login-nav{
