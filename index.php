@@ -10,10 +10,11 @@
     </div>
     <div class="icon-home">
         <a href=""></a>
-        <img src="twitter (1).svg" alt="twitter_icon">
+        <img src="asset/images/twitter (1).svg" alt="twitter_icon">
+        <img src="asset/images/instagram.svg" alt="instagram_icon">
     </div>
     <div class="sous-titre">
-        <p>Qualitea vous invite à travers une sélection exigeante de thés d'origine exceptionnels 
+        <p>Qualitea vous invite à travers une sélection exigeante de thés d'origine exceptionnelles 
         et de créations parfumées irrésistibles.</p>
     </div>
 
