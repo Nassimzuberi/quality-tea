@@ -3,103 +3,125 @@
     <?php include 'config/template/home-nav.php'; ?>
 </header>
 <body>
-<div class="home">
-    <div class="banniere_image">
-    <a href=""></a>
-    <img src="twitter (1).svg" alt="twitter_icon">
-    </div>
-    <div class="titre">
-        <h1 class="big-title">Qualitea</h1>
-        <h2>Thé & infusions</h2>
-    </div>
+<main>
+    <section class="home">
+        <div class="titre">
+            <h1 class="big-title">Qualitea</h1>
+            <h2>Thé & infusions</h2>
+        </div>
+        <div class="icon-home">
+            <a href=""><img src="asset/images/twitter (1).svg" alt="twitter_icon"></a>
+            <a href=""><img src="asset/images/instagram.svg" alt="instagram_icon"></a>
+        </div>
         <div class="sous-titre">
-            <p>Qualitea vous invite à travers une sélection exigeante de thés d'origine exceptionnels 
-            et de créations parfumées irrésistibles.</p>
+            <p>Qualitea vous invite à travers une sélection exigeante de thés d'origine exceptionnelles <br>
+                et de créations parfumées irrésistibles.</p>
+
+            <div class="scroll-btn text-center mx-auto mt-5">
+                <img src="asset/images/arrow-down.svg" alt="arrow-down" style="width:24px;height:40px;">
+            </div>
         </div>
 
-</div>
+    </section>
 
-    <div class="container">
-        <h3 class="title text-center">Notre sélection du moment</h3>
-        <div 
-            id="trait_dessus">
-        </div>
+    <section class="container ">
+        <h3 class="my-5 text-center selection">Notre sélection du moment</h3>
+        <div id="trait_dessus" class="mx-auto mb-5"></div>
         <div class="row">
-            <div class="col-4 ">
+            <div class="col-xl-4 ">
                 <div class="box px-5 py-3 text-center">
-                    <img src="asset/images/the-noir-vietnam-bio.png">
-                        <h4>White Bellini Bio</h4>
-                        <p>Recharge 100g</p>
-                        <div class="rating">
-                                <p>18,80€</p>;
-                                <button type="button" class="btn btn-primary btn-lg">Ajoutez</button>
-                        </div>
+                    <img src="asset/images/the-noir-vietnam-bio.png" alt="the-noir">
+                    <div class="article-description">
+                        <a href="fiche_produit.php?id=1">White Bellini Bio</a>
+                        <p class="article-capacity">Recharge 100g</p>
+                    </div>
+                    <div class="d-flex rating justify-content-center my-3">
+                        <?php for($i=0; $i<4;$i++)  : ?>
+                            <img src="asset/star-s.svg" alt="star-s">
+                        <?php endfor;?>
+                        <?php for($i=0;$i<1;$i++) : ?>
+                            <img src="asset/star-r.svg" alt="star-s">
+                        <?php endfor;?>
+                        6 avis
+                    </div>
+                    <p class="price">18,80€</p>
+                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
                 </div>
             </div>
-                <div class="col-4">
-                    <div class="box px-5 py-3 text-center">
-                        <img src="asset/images/the-vert-sencha-bio-feuille.jpg">
-                            <h4>Vert Bio</h4>
-                            <h6>Recharge 100g</h6>
-                            <div class="rating">
-                                    <p>11,00€</p>
-                                    <button type="button" class="btn btn-primary btn-lg">Ajoutez</button>
-                            </div>
+            <div class="col-xl-4 my-3 my-md-0">
+                <div class="box px-5 py-3 text-center">
+                    <img src="asset/images/the-vert-sencha-bio-feuille.jpg" alt="the-vert">
+                    <div class="article-description">
+                        <a href="fiche_produit.php?id=1">Vert Bio</a>
+                        <p class="article-capacity">Recharge 100g</p>
+                    </div>
+
+                    <div class="d-flex rating justify-content-center my-3">
+                        <?php for($i=0; $i<4;$i++)  : ?>
+                            <img src="asset/star-s.svg" alt="star-s">
+                        <?php endfor;?>
+                        <?php for($i=0;$i<1;$i++) : ?>
+                            <img src="asset/star-r.svg" alt="star-s">
+                        <?php endfor;?>
+                        6 avis
+                    </div>
+                    <p class="price">11,00€</p>
+                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="box px-5 py-3 text-center">
+                    <img src="asset/images/the-noir-keemun.jpg" alt="the-noir">
+                    <div class="article-description">
+                        <a href="fiche_produit.php?id=1" c>English Breakfast Bio</a>
+                        <p class="article-capacity">Recharge 100g</p>
+                    </div>
+
+                    <div class="d-flex rating justify-content-center my-3">
+                        <?php for($i=0; $i<4;$i++)  : ?>
+                            <img src="asset/star-s.svg" alt="star-s">
+                        <?php endfor;?>
+                        <?php for($i=0;$i<1;$i++) : ?>
+                            <img src="asset/star-r.svg" alt="star-s">
+                        <?php endfor;?>
+                        6 avis
+                    </div>
+
+                    <p class="price">11,00€</p>
+                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
+                </div>
+            </div>
+            <section class="offers">
+                <div class="first-img category">
+                    <div class="text-second-img text-white">
+                        <h3 class="first-texte">Nos thés natures</h3>
+                        <p>Pour un retour à l'essentiel !</p>
                     </div>
                 </div>
-                <div class="col-4">
-                <div class="box px-5 py-3 text-center">
-                    <img src="asset/images/the-noir-keemun.jpg">
-                        <h4>English Breakfast Bio</h4>
-                        <h6>Recharge 100g</h6>
-                        <div class="rating">
-                            <p>11,00€</p>
-                            <button type="button" class="btn btn-primary btn-lg">Ajoutez</button>
-                        </div>
+                <div class="second-img category">
+                    <div class="text-second-img text-white">
+                        <h3>Nos thés blancs</h3>
+                        <p>Laissez-vous transporter par leur délicatesse</p>
+                    </div>
                 </div>
-    </div>
-<section class="offers">
-    <div class="first-img">
-        <div class="text-second-img">
-            <h3 class="first-texte">Nos thés natures</h3>
-            <h4>Pour un retour à l'essentiel !</h4>
+            </section>
         </div>
-    </div>
-    <div class="second-img">
-        <div class="text-second-img">
-            <h3>Nos thés blancs</h3>
-            <h4>Laissez-vous transporter par leur délicatesse</h4>
-        </div>
-    </div>
-</section>
-<section class="newsletter">
-    <h3 class="second-title">Inscrivez-vous à notre newsletter pour recevoir nos offres et actualités</h3>
-            <div 
-                id="second-trait-dessus">
-            </div>
-            <div class="input-email">
-                <form>
-                    <input type="text" name="" placeholder="Votre email">
-                    <input type="submit" name="" value="Vérifier">
-                </form>
-            </div>
-            <p>
-                En cliquant sur “Vérifier”, vous acceptez expressément de recevoir les offres commerciales et les 
+        <section class="newsletter">
+            <h3 class="second-title">Inscrivez-vous à notre newsletter pour recevoir nos offres et actualités</h3>
+            <form class="input-email d-flex  w-100">
+                <input type="text" name="" placeholder="Votre email" class="form-control">
+                <button type="submit" class="btn btn-third">S'abonner</button>
+            </form>
+            <p class="newsletter-text text-center my-3">
+                En cliquant sur “Vérifier”, vous acceptez expressément de recevoir les offres commerciales et les
                 actualités de Qualitea par email selon les conditions de notre Politique de Confidentialité disponible ici.
             </p>
-            
-</section>
-<section class="social-menu">
-        <ul>
-            <i class="fab fa-facebook"></i>
-            <li><a href="#"><img src="twitter (1).svg" alt=""><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><img src="instagram.svg" alt=""><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><img src="pinterest-social-logo.svg" alt=""><i class="fa fa-pinterest"></i></a></li>
-        </ul>
-</section>
-</body>
-<h2 class="text-center mt-5 mb-5">Page Accueil</h2>
-<hr>
+
+        </section>
+    </section>
+</main>
+
+
+
 <?php include 'config/template/footer.php'; ?>
 
-<?php $title = "Page d'accueil |"; ?>

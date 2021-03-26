@@ -22,10 +22,10 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
             <div class="col-xl-8">
                 <div class="article-cart-group">
                     <div class="article-cart row align-items-center text-center">
-                        <div class="col-3 col-sm-2">
+                        <div class="col-12 col-sm-2">
                             <img src="asset/images/the-noir-keemun.jpg" alt="the-noir" class=" mw-100 article-cart-img">
                         </div>
-                        <div class="col-6 col-sm-5">
+                        <div class="col-12 col-sm-5">
                             <div class="article-cart-desc px-4">
                                 <h4>White Bellini Bio</h4>
                                 <p class="article-desc m-0">The noir du Sri-lanka</p>
@@ -33,18 +33,22 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
                             </div>
                         </div>
 
-                        <div class="col-3 col-sm-3">
+                        <div class="col col-sm-3 mt-3 mt-sm-0">
                             <div class="article-cart-qty">
                                 <div class="form-group">
                                     <label for="">Quantité</label>
-                                    <input type="number" class="form-control" name="qty">
+                                    <div class="form-qty">
+                                        <button class="plus" type="button">+</button>
+                                        <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="20">
+                                        <button class="minus" type="button">-</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-2 py-3 py-sm-0">
-                            <div class="article-cart-price d-flex justify-content-between d-sm-block">
+                            <div class="article-cart-price d-flex justify-content-between align-items-center d-sm-block">
                                 <p>Montant total</p>
-                                <p class="price">18,8€</p>
+                                <p class="price">18,80€</p>
                             </div>
                         </div>
 

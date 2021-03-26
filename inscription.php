@@ -3,7 +3,7 @@
     <div class="alert alert-success">Inscription validée</div>
 
 <?php endif ?>
-<form action="" method="post" class="form-signup px-3 px-md-5 py-3 bg-light">
+<form action="" method="post" class="form-signup px-3 px-md-5 py-3 bg-light mb-5">
     <h5 class="mt-3">Créer un compte</h5>
     <hr>
     <div class="form-group">

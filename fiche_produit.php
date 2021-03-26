@@ -3,7 +3,7 @@
 <header>
     <?php include 'config/template/nav.php'; ?>
 </header>
-<div class="pt-5">
+<main class="container pt-5">
     <?php
 
     if(isset($_GET)){
@@ -21,12 +21,12 @@
 
 
     <?php else : ?>
-        <div class="row my-5">
-            <div class="col-xl text-center">
-                <img src="asset/the-noir-vietnam-bio%201.png" alt="thé-noir">
+        <div class="row my-5 pt-5">
+            <div class="col-xl text-center ">
+                <img src="asset/the-noir-vietnam-bio%201.png" alt="thé-noir" class="w-100">
             </div>
             <div class="col-xl mx-auto">
-                <div class="card px-5 bg-secondary h-100 justify-content-center">
+                <div class="card px-5 bg-secondary w-100 h-100 justify-content-center py-3">
                     <div class="d-flex justify-content-between">
                         <h3>White Bellini bio</h3>
                         <p class="price">18.80€</p>
@@ -46,8 +46,11 @@
                         <!--                <input type="hidden" name="id" value="--><?//= $article['id'] ?><!--"><br>-->
                         <div class="form-group">
                             <label for="" class="text-grey">Quantité</label>
-                            <input type="number" name="qty" value="1" max="20" class="form-control">
-
+                            <div class="form-qty">
+                                <button class="plus" type="button">+</button>
+                                <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="20" disabled>
+                                <button class="minus" type="button">-</button>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-block btn-secondary" name="send" value="add-cart">Ajoutez</button>
                     </form>
@@ -57,6 +60,6 @@
             </div>
         </div>
     <?php endif;?>
-</div>
+</main>
 
 <?php include 'config/template/footer.php'; ?>
