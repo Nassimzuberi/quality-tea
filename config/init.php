@@ -12,6 +12,8 @@ if(isset($_POST["send"]) && $_POST["send"] == "signup"){
     createUser($_POST);
 } else if(isset($_POST['send']) && $_POST['send'] == "login"){
     login($_POST);
+} else if(isset($_POST['send']) && $_POST['send'] == "add-cart"){
+    addCart($_POST);
 }
 
 function getDb(){
@@ -95,6 +97,26 @@ function login(Array $user) {
         return header("location: index.php");
     }
     return header("location: user.php?p=login&error=true");
+}
+
+function addCart(Array $req){
+    if(!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = [];
+    }
+    var_dump($req);
+    foreach ($_SESSION['cart'] as $article){
+        if($article['id'] == $req['id']){
+            $article['qty'] += $req['qty'];
+            var_dump($article);
+            return 0;
+        }
+    }
+    array_push($_SESSION['cart'], [
+        'id' => $req['id'],
+        'qty' => $req['qty']
+    ]);
+
+    var_dump($_SESSION['cart']);
 }
 
 function logout(){

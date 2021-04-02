@@ -38,10 +38,12 @@
                             <label for="" class="text-grey">Quantité</label>
                             <div class="form-qty">
                                 <button class="plus" type="button">+</button>
-                                <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="<?= $article['stock'] ?>" disabled>
+                                <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="<?= $article['stock'] ?>">
                                 <button class="minus" type="button">-</button>
                             </div>
+
                         </div>
+
                         <button type="submit" class="btn btn-block btn-secondary" name="send" value="add-cart">Ajoutez</button>
                     </form>
                     <a href="" class="text-center text-grey my-3">Information sur la livraison</a>
