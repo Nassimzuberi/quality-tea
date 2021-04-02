@@ -5,50 +5,40 @@
 </header>
 <main class="container pt-5">
     <?php
-
-    if(isset($_GET)){
+    if(isset($_GET['id'])){
         $article = getArticleById($_GET['id']);
-    } else{
-
     }
     ?>
 
     <?php if($article) : ?>
-
-        <?= $article['name'] ?>
-        <?= $article['stock'] ?>
-
-
-
-    <?php else : ?>
         <div class="row my-5 pt-5">
             <div class="col-xl text-center ">
-                <img src="asset/the-noir-vietnam-bio%201.png" alt="thé-noir" class="w-100">
+                <img src="asset/images/<?= $article['img'] ?>" alt="thé-noir" class="w-100">
             </div>
             <div class="col-xl mx-auto">
                 <div class="card px-5 bg-secondary w-100 h-100 justify-content-center py-3">
                     <div class="d-flex justify-content-between">
-                        <h3>White Bellini bio</h3>
-                        <p class="price">18.80€</p>
+                        <h3><?= $article['name'] ?></h3>
+                        <p class="price"><?= $article['prix'] ?> €</p>
                     </div>
                     <p class="article-desc">Thé noir du Sri Lanka</p>
                     <p class="article-capacity">Recharge 100g</p>
                     <div>
                         <?php for($i=0; $i<4;$i++)  : ?>
-                            <img src="asset/star-s.svg" alt="star-s">
+                            <svg class="icon"><use xlink:href="asset/images/icon.svg#star-s"></use></svg>
                         <?php endfor;?>
                         <?php for($i=0;$i<1;$i++) : ?>
-                            <img src="asset/star-r.svg" alt="star-s">
+                            <svg class="icon"><use xlink:href="asset/images/icon.svg#star-r"></use></svg>
                         <?php endfor;?>
                         6 avis
                     </div>
                     <form action="" method="post" class="my-3">
-                        <!--                <input type="hidden" name="id" value="--><?//= $article['id'] ?><!--"><br>-->
+                        <input type="hidden" name="id" value="<?= $article['id'] ?>"><br>
                         <div class="form-group">
                             <label for="" class="text-grey">Quantité</label>
                             <div class="form-qty">
                                 <button class="plus" type="button">+</button>
-                                <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="20" disabled>
+                                <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="<?= $article['stock'] ?>" disabled>
                                 <button class="minus" type="button">-</button>
                             </div>
                         </div>
@@ -59,6 +49,9 @@
                 </div>
             </div>
         </div>
+    <?php else : ?>
+
+
     <?php endif;?>
 </main>
 

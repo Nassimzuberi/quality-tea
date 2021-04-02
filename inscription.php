@@ -81,7 +81,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">Confirmez le mot de passe*</label>
-            <input type="password" name="confirm_password " class="form-control <?= isset($_GET['confirm_password']) ? "is-invalid" : ''?>" required>
+            <input type="password" name="confirm_password" class="form-control <?= isset($_GET['confirm_password']) ? "is-invalid" : ''?>" required>
             <?php if(isset($_GET['confirm_password'])) : ?>
                 <div class="invalid-feedback">Les mots de passes ne sont pas identiques </div>
             <?php endif ?>

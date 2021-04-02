@@ -13,6 +13,16 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.icon{
+    width: 24px;
+    height: 24px;
+    fill:currentColor;
+}
+
+.icon.icon-2x{
+    width: 48px;
+    height: 48px;
+}
 /******************* COMMUN A TOUTES LES PAGES ************************/
 .text-grey{
     color: #5F5F5F;
@@ -137,8 +147,6 @@ svg#search-icon{
 .form-search{
     border: 2px var(--primary) solid;
     background: #282828;
-    display: flex;
-    align-items: center;
     border-radius: 31px;
     overflow: hidden;
 }
@@ -401,16 +409,13 @@ footer{
 
 }
 
-footer .qualities img{
-    height: 40px;
-}
 .footer-brand{
     font-family: "Bodoni Moda", serif;
     font-weight: 700;
     font-size: 1.25em;
 }
 
-footer p{
+footer p,.qualities{
     color: #7C7C7C;
 }
 

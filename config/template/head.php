@@ -1,7 +1,6 @@
 <?php
+session_start();
 require 'config/init.php';
-
-session_start()
 ?>
 
 <!DOCTYPE html>

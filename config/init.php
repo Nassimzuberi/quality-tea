@@ -10,14 +10,14 @@ define('PASSWORD',$env['DB_PASSWORD']);
 $title = "Page d'accueil";
 if(isset($_POST["send"]) && $_POST["send"] == "signup"){
     createUser($_POST);
-}
-if(isset($_POST['send']) && $_POST['send'] == "login"){
+} else if(isset($_POST['send']) && $_POST['send'] == "login"){
     login($_POST);
 }
 
 function getDb(){
     try{
         $pdo = new PDO('mysql:host='. HOST .';dbname='. NAME ,USER , PASSWORD);
+        $pdo->setAttribute( PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
     catch(PDOException $e){
@@ -44,7 +44,6 @@ function signupFormValidation(Array $user){
         $error .= "&confirm_password=true";
 
     }
-    var_dump($error);
     return $error;
 }
 
@@ -59,7 +58,17 @@ function createUser(Array $user){
 
     $pdo = getDb();
     $req = $pdo->prepare("INSERT INTO users(pseudo,email,password,rue,cp,ville,role_id,sexe) values (:pseudo,:email,:password,:rue,:cp,:ville,:role_id,:sexe)");
+    var_dump([
+        'pseudo' => $pseudo,
+        'email' => $email,
+        'password' => $passwordHash,
+        'rue' => $rue,
+        'cp' => $cp,
+        'ville' => $ville,
+        'role_id' => 1,
+        'sexe' => $sexe
 
+    ]);
     if($req->execute([
         'pseudo' => $pseudo,
         'email' => $email,
@@ -85,6 +94,7 @@ function login(Array $user) {
         $_SESSION['userID'] = $userBDD['id'];
         return header("location: index.php");
     }
+    return header("location: user.php?p=login&error=true");
 }
 
 function logout(){

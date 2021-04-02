@@ -2,17 +2,17 @@
     <div class="container py-5">
         <div class="row qualities text-center text-md-left">
             <div class="col-md-3 d-md-flex">
-                <img src="asset/images/cycle-loading.svg" alt="" class="mx-3">
+                <svg class="icon icon-2x mx-3"><use xlink:href="asset/images/icon.svg#cycle-loading"></use></svg>
+
                 <p>Nos boutiques collectent vos capsules</p>
             </div>
             <div class="col-md-3 d-md-flex">
-                <img src="asset/images/credit-card.svg" alt="" class="mx-3">
-
+                <svg class="icon icon-2x mx-3"><use xlink:href="asset/images/icon.svg#credit-card"></use></svg>
                 <p>Paiment
                     sécurisé</p>
             </div>
             <div class="col-md-3 d-md-flex">
-                <img src="asset/images/shipped.svg" alt="" class="mx-3">
+                <svg class="icon icon-2x mx-3"><use xlink:href="asset/images/icon.svg#shipped"></use></svg>
                 <p>Livraison offerte dès 35€</p>
             </div>
             <div class="col-md-3 d-md-flex">

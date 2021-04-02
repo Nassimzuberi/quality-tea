@@ -1,20 +1,22 @@
 "use strict";
+window.addEventListener("scroll", (e) => {
+    if(document.querySelector('.nav-bg') !== null){
+        const nav = document.querySelector('.nav-bg');
+        const scrollPos = window.scrollY;
+        if(scrollPos > nav.offsetHeight){
+            nav.classList.add("bg-light")
+            nav.classList.add("navbar-light")
+            nav.classList.remove("navbar-dark")
 
-if(document.querySelector('.nav-bg') !== null){
-    const nav = document.querySelector('.nav-bg');
-    const scrollPos = window.scrollY;
-    if(scrollPos > nav.offsetHeight){
-        nav.classList.add("bg-light")
-        nav.classList.add("navbar-light")
-        nav.classList.remove("navbar-dark")
+        } else {
+            nav.classList.remove("bg-light")
+            nav.classList.remove("navbar-light")
+            nav.classList.add("navbar-dark")
 
-    } else {
-        nav.classList.remove("bg-light")
-        nav.classList.remove("navbar-light")
-        nav.classList.add("navbar-dark")
-
+        }
     }
-}
+
+})
 document.querySelector('.scroll-btn') !== null && (
     document.querySelector('.scroll-btn').addEventListener('click', (e) => {
         const selection = document.querySelector('.selection')

@@ -1,4 +1,6 @@
-<?php include 'config/template/head.php'; ?>
+<?php include 'config/template/head.php';
+$articles = getArticles();
+?>
 <header>
     <?php include 'config/template/home-nav.php'; ?>
 </header>
@@ -28,68 +30,28 @@
         <h3 class="my-5 text-center selection">Notre sélection du moment</h3>
         <div id="trait_dessus" class="mx-auto mb-5"></div>
         <div class="row">
-            <div class="col-xl-4 ">
-                <div class="box px-5 py-3 text-center">
-                    <img src="asset/images/the-noir-vietnam-bio.png" alt="the-noir">
-                    <div class="article-description">
-                        <a href="fiche_produit.php?id=1">White Bellini Bio</a>
-                        <p class="article-capacity">Recharge 100g</p>
+            <?php foreach ($articles as $article) : ?>
+                <div class="col-xl-4 my-2 my-md-0">
+                    <div class="box px-5 py-3 text-center">
+                        <img src="asset/images/<?= $article['img'] ?>" alt="the-noir">
+                        <div class="article-description">
+                            <a href="fiche_produit.php?id=<?= $article['id'] ?>"><?= $article['name'] ?></a>
+                            <p class="article-capacity">Recharge 100g</p>
+                        </div>
+                        <div class="d-flex rating justify-content-center my-3">
+                            <?php for($i=0; $i<4;$i++)  : ?>
+                                <svg class="icon"><use xlink:href="asset/images/icon.svg#star-s"></use></svg>
+                            <?php endfor;?>
+                            <?php for($i=0;$i<1;$i++) : ?>
+                                <svg class="icon"><use xlink:href="asset/images/icon.svg#star-r"></use></svg>
+                            <?php endfor;?>
+                            6 avis
+                        </div>
+                        <p class="price"><?= $article['prix'] ?> €</p>
+                        <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
                     </div>
-                    <div class="d-flex rating justify-content-center my-3">
-                        <?php for($i=0; $i<4;$i++)  : ?>
-                            <img src="asset/star-s.svg" alt="star-s">
-                        <?php endfor;?>
-                        <?php for($i=0;$i<1;$i++) : ?>
-                            <img src="asset/star-r.svg" alt="star-s">
-                        <?php endfor;?>
-                        6 avis
-                    </div>
-                    <p class="price">18,80€</p>
-                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
                 </div>
-            </div>
-            <div class="col-xl-4 my-3 my-md-0">
-                <div class="box px-5 py-3 text-center">
-                    <img src="asset/images/the-vert-sencha-bio-feuille.jpg" alt="the-vert">
-                    <div class="article-description">
-                        <a href="fiche_produit.php?id=1">Vert Bio</a>
-                        <p class="article-capacity">Recharge 100g</p>
-                    </div>
-
-                    <div class="d-flex rating justify-content-center my-3">
-                        <?php for($i=0; $i<4;$i++)  : ?>
-                            <img src="asset/star-s.svg" alt="star-s">
-                        <?php endfor;?>
-                        <?php for($i=0;$i<1;$i++) : ?>
-                            <img src="asset/star-r.svg" alt="star-s">
-                        <?php endfor;?>
-                        6 avis
-                    </div>
-                    <p class="price">11,00€</p>
-                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="box px-5 py-3 text-center">
-                    <img src="asset/images/the-noir-keemun.jpg" alt="the-noir">
-                    <div class="article-description">
-                        <a href="fiche_produit.php?id=1" c>English Breakfast Bio</a>
-                        <p class="article-capacity">Recharge 100g</p>
-                    </div>
-
-                    <div class="d-flex rating justify-content-center my-3">
-                        <?php for($i=0; $i<4;$i++)  : ?>
-                            <img src="asset/star-s.svg" alt="star-s">
-                        <?php endfor;?>
-                        <?php for($i=0;$i<1;$i++) : ?>
-                            <img src="asset/star-r.svg" alt="star-s">
-                        <?php endfor;?>
-                        6 avis
-                    </div>
-
-                    <p class="price">11,00€</p>
-                    <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
-                </div>
+            <?php endforeach; ?>
             </div>
             <section class="offers">
                 <div class="first-img category">

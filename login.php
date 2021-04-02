@@ -19,5 +19,8 @@
         </div>
     </form>
 </div>
+<?php
 
-<?php $title = "Connexion"; ?>
+if(isset($_SESSION)){
+    var_dump($_SESSION);
+}

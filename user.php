@@ -1,5 +1,6 @@
 <?php !isset($_GET['p']) ? header('location: ?p=login') : ""; ?>
 
+
 <?php include 'config/template/head.php'; ?>
 <header>
     <?php include 'config/template/nav.php'; ?>
