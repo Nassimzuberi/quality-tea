@@ -103,11 +103,9 @@ function addCart(Array $req){
     if(!isset($_SESSION['cart'])){
         $_SESSION['cart'] = [];
     }
-    var_dump($req);
-    foreach ($_SESSION['cart'] as $article){
+    foreach ($_SESSION['cart'] as $key => $article){
         if($article['id'] == $req['id']){
-            $article['qty'] += $req['qty'];
-            var_dump($article);
+            $_SESSION['cart'][$key]['qty'] += $req['qty'];
             return 0;
         }
     }
@@ -116,7 +114,6 @@ function addCart(Array $req){
         'qty' => $req['qty']
     ]);
 
-    var_dump($_SESSION['cart']);
 }
 
 function logout(){
