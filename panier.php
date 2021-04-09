@@ -49,7 +49,7 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
                                 <div class="col-12 col-sm-2 py-3 py-sm-0">
                                     <div class="article-cart-price d-flex justify-content-between align-items-center d-sm-block">
                                         <p>Montant total</p>
-                                        <p class="price"><?= $article['prix'] ?> €</p>
+                                        <p class="price"><?= $articleCart['price'] ?> €</p>
                                     </div>
                                 </div>
 
@@ -72,7 +72,7 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
                     <div class="order-price px-3">6.99€</div>
                     <div class="d-flex justify-content-between my-3 text-grey">
                         <p>Total</p>
-                        <p>18.8€</p>
+                        <p><?= getTotalCart(); ?> €</p>
                     </div>
                     <button type="submit" class="btn btn-block btn-secondary my-3">Commandez</button>
                 </form>
