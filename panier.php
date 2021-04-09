@@ -1,12 +1,4 @@
-<?php include 'config/template/head.php';
-$articles = [];
-if(isset($_SESSION['cart'])){
-
-    foreach($_SESSION['cart'] as $article){
-        array_push($articles,getArticleById($article['id']));
-    }
-}
-?>
+<?php include 'config/template/head.php';?>
 <header>
     <?php include 'config/template/nav.php'; ?>
 </header>
