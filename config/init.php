@@ -14,6 +14,8 @@ if(isset($_POST["send"]) && $_POST["send"] == "signup"){
     login($_POST);
 } else if(isset($_POST['send']) && $_POST['send'] == "add-cart"){
     addCart($_POST);
+} else if(isset($_POST['send']) && $_POST['send'] == "delete-cart"){
+    deleteCart($_POST);
 }
 
 function getDb(){
@@ -117,6 +119,17 @@ function addCart(Array $req){
         'price' => $req['qty'] * $product['prix'],
     ]);
 
+}
+
+function deleteCart(Array $req){
+    foreach ($_SESSION['cart'] as $key => $article){
+
+        if($article['id'] == $req['id']){
+
+            unset($_SESSION['cart'][$key]);
+            return 0;
+        }
+    }
 }
 
 function getTotalCart(){

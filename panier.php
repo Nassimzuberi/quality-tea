@@ -38,11 +38,15 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
                                     <div class="article-cart-qty">
                                         <div class="form-group">
                                             <label for="">Quantité</label>
-                                            <div class="form-qty">
+                                            <form class="form-qty">
                                                 <button class="plus" type="button">+</button>
                                                 <input type="number" id="app-qty" class="form-control" name="qty" value="<?= $articleCart['qty'] ?>" max="20">
                                                 <button class="minus" type="button">-</button>
-                                            </div>
+                                            </form>
+                                            <form action="" method="post" class="my-2">
+                                                <input type="hidden" value="<?= $articleCart['id'] ?>" name="id">
+                                                <button type="submit" class="btn btn-danger btn-sm" name="send" value="delete-cart">Supprimer</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
