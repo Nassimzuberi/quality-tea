@@ -18,40 +18,46 @@ linear-gradient(0deg, rgba(255, 229, 136, 0.4), rgba(255, 229, 136, 0.4));
         <div class="row">
             <div class="col-xl-8">
                 <div class="article-cart-group">
-                    <?php foreach ($articles as $article) : ?>
-                    <div class="article-cart row align-items-center text-center mb-2">
-                        <div class="col-12 col-sm-2">
-                            <img src="asset/images/<?= $article['img'] ?>" alt="the-noir" class=" mw-100 article-cart-img">
-                        </div>
-                        <div class="col-12 col-sm-5">
-                            <div class="article-cart-desc px-4">
-                                <h4><?= $article['name'] ?></h4>
-                                <p class="article-desc m-0">The noir du Sri-lanka</p>
-                                <p class="article-capacity m-0">Recharge 100g</p>
-                            </div>
-                        </div>
-
-                        <div class="col col-sm-3 mt-3 mt-sm-0">
-                            <div class="article-cart-qty">
-                                <div class="form-group">
-                                    <label for="">Quantité</label>
-                                    <div class="form-qty">
-                                        <button class="plus" type="button">+</button>
-                                        <input type="number" id="app-qty" class="form-control" name="qty" value="1" max="20">
-                                        <button class="minus" type="button">-</button>
+                    <?php
+                    if(isset($_SESSION['cart'])){
+                        foreach ($_SESSION['cart'] as $articleCart) :
+                            $article = getArticleById($articleCart['id']); ?>
+                            <div class="article-cart row align-items-center text-center mb-2">
+                                <div class="col-12 col-sm-2">
+                                    <img src="asset/images/<?= $article['img'] ?>" alt="the-noir" class=" mw-100 article-cart-img">
+                                </div>
+                                <div class="col-12 col-sm-5">
+                                    <div class="article-cart-desc px-4">
+                                        <h4><?= $article['name'] ?></h4>
+                                        <p class="article-desc m-0">The noir du Sri-lanka</p>
+                                        <p class="article-capacity m-0">Recharge 100g</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-2 py-3 py-sm-0">
-                            <div class="article-cart-price d-flex justify-content-between align-items-center d-sm-block">
-                                <p>Montant total</p>
-                                <p class="price"><?= $article['prix'] ?> €</p>
-                            </div>
-                        </div>
 
-                    </div>
-                    <?php endforeach; ?>
+                                <div class="col col-sm-3 mt-3 mt-sm-0">
+                                    <div class="article-cart-qty">
+                                        <div class="form-group">
+                                            <label for="">Quantité</label>
+                                            <div class="form-qty">
+                                                <button class="plus" type="button">+</button>
+                                                <input type="number" id="app-qty" class="form-control" name="qty" value="<?= $articleCart['qty'] ?>" max="20">
+                                                <button class="minus" type="button">-</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-2 py-3 py-sm-0">
+                                    <div class="article-cart-price d-flex justify-content-between align-items-center d-sm-block">
+                                        <p>Montant total</p>
+                                        <p class="price"><?= $article['prix'] ?> €</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <?php endforeach;
+                    }
+
+                    ?>
                 </div>
             </div>
             <div class="col-xl-4 my-4 my-xl-0">
