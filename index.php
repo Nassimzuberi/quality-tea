@@ -1,4 +1,6 @@
-<?php include 'config/template/head.php';
+<?php
+$title = "Accueil |";
+include 'config/template/head.php';
 $articles = getArticles();
 ?>
 <header>
@@ -48,7 +50,7 @@ $articles = getArticles();
                             6 avis
                         </div>
                         <p class="price"><?= $article['prix'] ?> €</p>
-                        <button type="button" class="btn btn-primary btn-block">Ajoutez</button>
+                        <button type="button" class="btn btn-primary btn-block app-add-cart" data-id="<?= $article['id'] ?>">Ajoutez</button>
                     </div>
                 </div>
             <?php endforeach; ?>

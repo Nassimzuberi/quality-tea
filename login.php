@@ -6,7 +6,11 @@
         <hr>
         <div class="form-group my-3">
             <label for="">Email</label>
-            <input type="email" name="email" class="form-control">
+            <input type="email" name="email" class="form-control <?= hasError('login')  ? 'is-invalid' : "" ?>">
+            <?php if(hasError("login")) : ?>
+                <div class="invalid-feedback"><?= getError("login") ?></div>
+
+            <?php endif ?>
         </div>
 
         <div class="form-group my-3">
@@ -20,7 +24,3 @@
     </form>
 </div>
 <?php
-
-if(isset($_SESSION)){
-    var_dump($_SESSION);
-}

@@ -1,4 +1,7 @@
-<?php !isset($_GET['p']) ? header('location: ?p=login') : ""; ?>
+<?php
+!isset($_GET['p']) ? header('location: ?p=login') : "";
+$title = $_GET['p'] == "login" ?  "Connexion |" : "Inscription |";
+?>
 
 
 <?php include 'config/template/head.php'; ?>

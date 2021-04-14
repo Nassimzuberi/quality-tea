@@ -1,6 +1,6 @@
 
-<?php if(isset($_GET['register']) && $_GET['register'] == true) : ?>
-    <div class="alert alert-success">Inscription validée</div>
+<?php if(hasSuccess("signup")) : ?>
+    <div class="alert alert-success"><?= getSuccess("signup") ?></div>
 
 <?php endif ?>
 <form action="" method="post" class="form-signup px-3 px-md-5 py-3 bg-light mb-5">
@@ -32,10 +32,10 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="">Pseudo*</label>
-            <input type="text" name="pseudo" class="form-control <?= isset($_GET['pseudo']) ? "is-invalid" : ''?>" required>
+            <input type="text" name="pseudo" class="form-control <?= hasError('pseudo') ? "is-invalid" : ''?>" required>
 
-            <?php if(isset($_GET['pseudo'])) : ?>
-                <div class="invalid-feedback">Le pseudo doit comprendre entre 3 et 10 caractères</div>
+            <?php if(hasError('pseudo')) : ?>
+                <div class="invalid-feedback"><?= getError('pseudo') ?></div>
             <?php endif ?>
         </div>
         <div class="form-group col-md-6">
@@ -64,26 +64,23 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">Pays*</label>
-            <input type="text" name="pays" class="form-control" required>
+            <input type="text" name="country" class="form-control" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="">Mot de passe*</label>
-            <input type="password" name="password" class="form-control <?= isset($_GET['password']) || isset($_GET['password2']) ? "is-invalid" : '' ?>" required>
-            <?php if(isset($_GET['password'])) : ?>
-                <div class="invalid-feedback">Le mot de passe doit faire 8 caractères minimum</div>
-            <?php endif ?>
-            <?php if(isset($_GET['password2'])) : ?>
-                <div class="invalid-feedback">Le mot de passe doit comprendre 1 majuscule, 1 minuscule et 1 chiffre minimum</div>
+            <input type="password" name="password" class="form-control <?= hasError('password') ? "is-invalid" : '' ?>" required>
+            <?php if(hasError('password')) : ?>
+                <div class="invalid-feedback"><?= getError('password') ?></div>
             <?php endif ?>
 
         </div>
         <div class="form-group col-md-6">
             <label for="">Confirmez le mot de passe*</label>
-            <input type="password" name="confirm_password" class="form-control <?= isset($_GET['confirm_password']) ? "is-invalid" : ''?>" required>
-            <?php if(isset($_GET['confirm_password'])) : ?>
-                <div class="invalid-feedback">Les mots de passes ne sont pas identiques </div>
+            <input type="password" name="confirm_password" class="form-control <?= hasError('confirm_password') ? "is-invalid" : ''?>" required>
+            <?php if(hasError('confirm_password')) : ?>
+                <div class="invalid-feedback"><?= getError('confirm_password') ?> </div>
             <?php endif ?>
         </div>
     </div>

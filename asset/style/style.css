@@ -24,6 +24,9 @@ input[type=number]::-webkit-outer-spin-button {
     height: 48px;
 }
 /******************* COMMUN A TOUTES LES PAGES ************************/
+main{
+    min-height: 100vh;
+}
 .text-grey{
     color: #5F5F5F;
 }
@@ -43,8 +46,11 @@ a.text-grey:hover{
     text-transform: uppercase;
     padding: 10px 2em;
     border: none;
+    transition: 0.2s all;
 }
-
+#overrides .btn-secondary:hover{
+    transform: scale(1.05);
+}
 #overrides .btn-primary{
     border: 2px solid #282828;
     box-sizing: border-box;
@@ -383,6 +389,53 @@ svg#search-icon{
     font-weight: 600;
 }
 
+/******************************* MODALE *****************************/
+
+.modale{
+    position: fixed;
+    top:0;bottom: 0;
+    right:0;
+    width:100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1200;
+}
+
+.modale-content{
+    position: absolute;
+    z-index: 1300;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    padding: 3em;
+    text-align: center;
+    background: white;
+    animation: 0.5s ease-in 0s fade-right forwards;
+}
+
+.modale-content img{
+    width: 200px;
+}
+
+.modale-content .btn-close{
+    position:absolute;
+    top:20px;
+    left: 20px
+}
+
+.btn-close:hover{
+    color: var(--primary);
+    cursor:pointer;
+
+}
+
+@keyframes fade-right {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 /*********************** PAGE PANIER ******************************/
 
 #overrides .article-cart-img{

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between fixed-top">
-    <a class="navbar-brand px-5"  href="./index.php">Qualitea</a>
+    <a class="navbar-brand px-5"  href="./">Qualitea</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav text-center text-xl-left">
             <li class="nav-item">
-                <a class="nav-link" href="#">Nos thés & infusions</span></a>
+                <a class="nav-link" href="/page_produit.php">Nos thés & infusions</span></a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link" href="#">Boites & sachets</a>
+                <a class="nav-link" href="/page_produit.php">Boites & sachets</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link" href="#">Coffrets & cadeaux</a>
+                <a class="nav-link" href="/page_produit.php">Coffrets & cadeaux</a>
             </li>
             <li class="nav-item mx-3">
-                <a class="nav-link" href="#">Accessoires</a>
+                <a class="nav-link" href="/page_produit.php">Accessoires</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto text-center text-xl-left">

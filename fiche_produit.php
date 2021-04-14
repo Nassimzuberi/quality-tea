@@ -1,9 +1,9 @@
-
+<?php $title = "Page produit |"; ?>
 <?php include 'config/template/head.php'; ?>
 <header>
     <?php include 'config/template/nav.php'; ?>
 </header>
-<main class="container pt-5">
+<main class="container background">
     <?php
     if(isset($_GET['id'])){
         $article = getArticleById($_GET['id']);
@@ -11,7 +11,11 @@
     ?>
 
     <?php if($article) : ?>
-        <div class="row my-5 pt-5">
+        <?php if(hasSuccess('cart')) : ?>
+            <div class="alert alert-success"><?= getSuccess('cart') ?></div>
+        <?php endif ?>
+        <div class="row  pt-5">
+
             <div class="col-xl text-center ">
                 <img src="asset/images/<?= $article['img'] ?>" alt="thé-noir" class="w-100">
             </div>
